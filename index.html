@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Income Map</title>
+    <link rel="icon" type="image/png" href="./favicon.png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="./income-map.css"  /> 
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+         crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+         integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+         crossorigin=""></script>
+
+</head>
+
+
+<body>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="title">
+                <h3>Household Income by Location</h3>
+            </div>
+        </div>
+        
+    </div>
+    <div class="row">
+        
+        <div class="col-md-2">
+            <div class="key">
+                <p>Key:</p>
+                <div class="card grad"></div>
+                <ul>
+                    <li>Green: higher income area</li>
+                    <br>
+                    <li>Yellow: middle income area</li>
+                    <br>
+                    <li>Red: lower income area</li>
+                </ul> 
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div id="map"></div>
+        </div>
+        
+    </div>
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <div class="description">
+                <p>Map displays average household income by binned by geolocation. By zooming in and out on the map 
+                    different levels of granularity are visualized, giving a complete summary of the data. Clicking on a hexagon 
+                    will display a popup that shows the average household income and standard deviation for that specific hexagon. 
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/d3.v7.min.js"></script>
+    <script src = "js/dc.js"></script>
+    <script src = "js/crossfilter.js"></script>
+    <script src="js/h3-js.umd.js"></script>
+    <script src="income-map.js"></script>
+</body>
+</html>
